@@ -8,7 +8,7 @@ var timerEl = document.getElementById("countdown");
 var timerTotalEl = document.getElementById("total-countdown");
 var startQuizEl = document.getElementById("start-quiz");
 var questionsAsked = 0;
-var totalTimeleft = 75;
+var totalTimeleft = 80;
 var somethingCool
 hideButtons();
 
@@ -188,6 +188,7 @@ function quizCountdown(event) {
             // setQuestionAndAnswer(question[0], answers1);        
         }
         timeLeft--;
+        totalTimeleft--;
     }, 1000);
 };
 
@@ -195,7 +196,7 @@ function timerQuiz() {
     timerTotalEl.textContent = "Time " + totalTimeleft;
     
     var quizTimer = setInterval(function () {
-        // timerTotalEl.textContent = "Time " + totalTimeleft;
+        timerTotalEl.textContent = "Time " + totalTimeleft;
         totalTimeleft--;
   
       if (totalTimeleft === 0) {
