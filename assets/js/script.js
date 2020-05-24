@@ -192,10 +192,11 @@ function quizCountdown(event) {
 };
 
 function timerQuiz() {
-  
+    timerTotalEl.textContent = "Time " + totalTimeleft;
+    
     var quizTimer = setInterval(function () {
-      timerTotalEl.textContent = "Time " + totalTimeleft;
-      totalTimeleft--;
+        timerTotalEl.textContent = "Time " + totalTimeleft;
+        totalTimeleft--;
   
       if (totalTimeleft === 0) {
         timerTotalEl.textContent = "";
