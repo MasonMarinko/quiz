@@ -14,7 +14,7 @@ header {
 }
 
 button {
-        background-color: #039be5;
+        background-color: #014468;
         border-radius: 8px;
         color: #fff;
         cursor: pointer;
@@ -33,7 +33,7 @@ button {
 }
 
 button:hover {
-    background-color: #0288d1;
+    background-color: #039be5;
   }
 
 .main-body {
@@ -58,4 +58,9 @@ button:hover {
 
 #start-quiz {
     font-size: 30px;
+}
+
+.choices {
+    height: 75px;
+    width: 255px
 }
