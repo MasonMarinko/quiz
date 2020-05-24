@@ -8,7 +8,7 @@ var timerEl = document.getElementById("countdown");
 var timerTotalEl = document.getElementById("total-countdown");
 var startQuizEl = document.getElementById("start-quiz");
 var questionsAsked = 0;
-var totalTimeleft = 80;
+var totalTimeleft = 75;
 var somethingCool
 hideButtons();
 
@@ -125,6 +125,7 @@ function setQuestionAndAnswer(questionText, answerText) {
 answer1El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer1.isCorrect === true) {
         alert("You got it right!");
+        totalTimeleft += 5;
     } else {
         alert("You got it wrong");
     }
@@ -134,6 +135,7 @@ answer1El.addEventListener("click", function () {
 answer2El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer2.isCorrect === true) {
         alert("You got it right!");
+        totalTimeleft += 5;
     } else {
         alert("You got it wrong");
     }
@@ -143,6 +145,7 @@ answer2El.addEventListener("click", function () {
 answer3El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer3.isCorrect === true) {
         alert("You got it right!");
+        totalTimeleft += 5;        
     } else {
         alert("You got it wrong");
     }
@@ -152,6 +155,7 @@ answer3El.addEventListener("click", function () {
 answer4El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer4.isCorrect === true) {
         alert("You got it right!");
+        totalTimeleft += 5;
     } else {
         alert("You got it wrong");
     }
@@ -188,17 +192,16 @@ function quizCountdown(event) {
             // setQuestionAndAnswer(question[0], answers1);        
         }
         timeLeft--;
-        totalTimeleft--;
     }, 1000);
 };
 
 function timerQuiz() {
     timerTotalEl.textContent = "Time " + totalTimeleft;
-    
+
     var quizTimer = setInterval(function () {
-        timerTotalEl.textContent = "Time " + totalTimeleft;
         totalTimeleft--;
-  
+        timerTotalEl.textContent = "Time " + totalTimeleft;
+
       if (totalTimeleft === 0) {
         timerTotalEl.textContent = "";
         clearInterval(quizTimer);
