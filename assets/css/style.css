@@ -1,17 +1,33 @@
 .flexbox {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
+#high-scores {
+    background: transparent;
+    color: #014468;
+    border: none;
+    padding: 0;
+    margin: 0px;
+    width: 175px;
+}
+
+#high-scores:hover {
+    color: #039be5;
+  }
+
 header {
     height: 200px;
+    align-items: flex-start;
 }
 
 .countdown {
     font-size: 40px;
 }
+
+
 
 button {
         background-color: #014468;
@@ -35,6 +51,11 @@ button {
 button:hover {
     background-color: #039be5;
   }
+
+.all-done-text {
+    font-size: 40px;
+    width: 100%;
+}
 
 .main-body {
     height: 200px;
@@ -63,4 +84,66 @@ button:hover {
 .choices {
     height: 75px;
     width: 255px
+}
+
+.total-countdown {
+    font-size: 30px;
+}
+
+.score {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: 34px;
+    display: contents;
+}
+.score-time {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 50px;
+    width: 175px;
+}
+
+  input {
+    background-color: #f1f3f4;
+    border-radius: 2px;
+    border-width: 0;
+    color: #5f6368;
+    font-size: 1em;
+    height: 45px;
+    line-height: 20px;
+    margin: 0;
+    max-width: 100%;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.2s, 0.2s;
+    transition-property: background-color, color;
+    transition-timing-function: ease, ease;
+    vertical-align: middle;
+    margin-bottom: 15px;
+  }
+
+  input:hover {
+    background-color: #e8eaed;
+  }
+
+  label {
+      width: 500px;
+      font-size: 40px;
+      font-weight: bold;
+      padding-right: 20px;
+  }
+
+#submit {
+    margin: 0;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    padding-bottom: 25px;
+}
+
+#input-group {
+    align-items: center;
 }

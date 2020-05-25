@@ -7,9 +7,13 @@ var answer4El = document.getElementById("answer-4");
 var timerEl = document.getElementById("countdown");
 var timerTotalEl = document.getElementById("total-countdown");
 var startQuizEl = document.getElementById("start-quiz");
+var submitEl = document.querySelector("#submit");
+var scoreEl = document.getElementById("score");
+var inputEl = document.getElementById("input-group")
+var highScoreEl = document.getElementById("high-score-list")
+var score = 0;
 var questionsAsked = 0;
 var totalTimeleft = 75;
-var somethingCool
 hideButtons();
 
 var answers1 = {
@@ -111,7 +115,7 @@ var answers5 = {
 var answerArrayObj = [answers1, answers2, answers3, answers4, answers5]
 
 function setQuestionAndAnswer(questionText, answerText) {
-    if(questionsAsked == answerArrayObj.length) 
+    if(questionsAsked == answerArrayObj.length)
     return handleEndofGame();
     questionsEl.textContent = questionText;
     answer1El.textContent = answerText.answer1.text;
@@ -120,14 +124,62 @@ function setQuestionAndAnswer(questionText, answerText) {
     answer4El.textContent = answerText.answer4.text; 
 }
 
-// var handleEndofGame();
+
+function handleEndofGame () {
+    document.getElementsByClassName("multiple-choice")[0].style.display = "none";
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("total-countdown").style.display = "none";
+    document.getElementById("all-done").style.display = "flex";
+    timerTotalEl.textContent = "Time: " + totalTimeleft;
+
+}
+
+
+submitEl.addEventListener("click", function (event) {
+    event.preventDefault();
+  
+    var highScore = score;
+    var submit = document.querySelector("#high-score").value;
+  
+    if (submit === "") {
+      alert("Please enter initials");
+    } else {
+      alert("Registered successfully!");
+  
+      localStorage.setItem(submit, highScore);
+      renderLastRegistered();
+    }
+  });
+
+  
+
+  function renderLastRegistered() {
+    document.getElementById("all-done").style.display = "none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("high-scores").style.display = "none";
+    document.getElementById("high-score-list").style.display = "flex";
+    var email = localStorage.getItem("high-score");
+  
+    if (highscore === null) {
+      return;
+    }
+  
+    userEmailSpan.textContent = email;
+  }
+
+
 
 answer1El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer1.isCorrect === true) {
         alert("You got it right!");
+        score += totalTimeleft;
         totalTimeleft += 5;
+        scoreEl.textContent = "Score: " + score;
     } else {
         alert("You got it wrong");
+        score -= (totalTimeleft / 2);
+        totalTimeleft -= 5;
+        scoreEl.textContent = "Score: " + score;
     }
     askNextQuestion()
 })
@@ -135,9 +187,14 @@ answer1El.addEventListener("click", function () {
 answer2El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer2.isCorrect === true) {
         alert("You got it right!");
-        totalTimeleft += 5;
+        score += totalTimeleft;
+        totalTimeleft -= 5;
+        scoreEl.textContent = "Score: " + score;
     } else {
         alert("You got it wrong");
+        score -= (totalTimeleft / 2);
+        totalTimeleft -= 5;
+        scoreEl.textContent = "Score: " + score;
     }
     askNextQuestion()
 })
@@ -145,9 +202,14 @@ answer2El.addEventListener("click", function () {
 answer3El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer3.isCorrect === true) {
         alert("You got it right!");
-        totalTimeleft += 5;        
+        score += totalTimeleft;
+        totalTimeleft += 5;
+        scoreEl.textContent = "Score: " + score;      
     } else {
         alert("You got it wrong");
+        score -= (totalTimeleft / 2);
+        totalTimeleft -= 5;
+        scoreEl.textContent = "Score: " + score;
     }
     askNextQuestion()
 })
@@ -155,9 +217,14 @@ answer3El.addEventListener("click", function () {
 answer4El.addEventListener("click", function () {
     if (answerArrayObj[questionsAsked].answer4.isCorrect === true) {
         alert("You got it right!");
+        score += totalTimeleft;
         totalTimeleft += 5;
+        scoreEl.textContent = "Score: " + score;
     } else {
         alert("You got it wrong");
+        score -= (totalTimeleft / 2);
+        totalTimeleft -= 5;
+        scoreEl.textContent = "Score: " + score;
     }
     askNextQuestion()
 }) 
@@ -171,7 +238,9 @@ function askNextQuestion(){
 
 
 function hideButtons() {
-    somethingCool = document.getElementsByClassName("multiple-choice")[0].style.display = "none";
+    document.getElementsByClassName("multiple-choice")[0].style.display = "none";
+    document.getElementById("all-done").style.display = "none";
+    document.getElementById("high-score-list").style.display = "none";
 };
 
 
@@ -185,6 +254,7 @@ function quizCountdown(event) {
                 timerQuiz()
                 document.getElementById("start-quiz").style.display = "none"
                 document.getElementsByClassName("multiple-choice")[0].style.display = "flex";
+                scoreEl.textContent = "Score: " + score;
                 setQuestionAndAnswer(question[0], answers1);
             clearInterval(timeInterval);
             timerEl.textContent = "";   
@@ -196,11 +266,11 @@ function quizCountdown(event) {
 };
 
 function timerQuiz() {
-    timerTotalEl.textContent = "Time " + totalTimeleft;
+    timerTotalEl.textContent = "Time: " + totalTimeleft;
 
     var quizTimer = setInterval(function () {
         totalTimeleft--;
-        timerTotalEl.textContent = "Time " + totalTimeleft;
+        timerTotalEl.textContent = "Time: " + totalTimeleft;
 
       if (totalTimeleft === 0) {
         timerTotalEl.textContent = "";
@@ -212,8 +282,4 @@ function timerQuiz() {
 
 
 startQuizEl.addEventListener("click", quizCountdown)
-
-// answer1El.addEventListener("click", )
-// answer2El.addEventListener("click", )
-// answer3El.addEventListener("click", )
-// answer4El.addEventListener("click", )
+// formEl.addEventListener("submit", taskFormHandler);

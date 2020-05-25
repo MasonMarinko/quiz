@@ -10,11 +10,34 @@
 
 <body>
     <header class="flexbox">
-        <h1 id="high-scores">View High Scores</h1>
+        <button id="high-scores">View High Scores</button>
+        <div class = "score-time">
+        <h3 class="score" id="score"></h3>
         <h3 class="total-countdown" id="total-countdown"></h3>
+        </div>
     </header>
     <main id="page-content">
         <section class="flexbox question-answer">
+            <div id = "high-score-list">
+                <ul class="list-high-score" id="lists-high-score"></ul>
+        </div>
+            <div class = "flexbox all-done" id="all-done">
+                <!-- <h2 id = "all-done"> All Done!</h2> -->
+                <h3 id = "final-score"></h3>
+                <h2 class = "all-done-text">All Done!</h2>    
+                <div id="input-group">
+                <label class= "initials-text" for="high-score">Enter Initials:</label>
+                <input
+              type="text"
+              name="high-score"
+              id="high-score"
+              placeholder="  Initials"
+            />
+            <button id="submit">Submit</button>
+            </div>
+
+
+            </div>
             <div class="flexbox main-body">
                 <h2 id="countdown-timer"></h2>
                 <h3 class="questions" id="questions"></h3>
