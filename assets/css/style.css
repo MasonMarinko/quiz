@@ -73,6 +73,10 @@ button:hover {
     font-size: 40px;
 }
 
+li {
+    font-size: 40px;
+}
+
 .choices {
     margin: 10px;
 }
@@ -88,6 +92,10 @@ button:hover {
 
 .total-countdown {
     font-size: 30px;
+}
+
+.list-high-score {
+    list-style: none;
 }
 
 .score {
