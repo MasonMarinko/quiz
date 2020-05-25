@@ -16,7 +16,7 @@
 
 #high-scores:hover {
     color: #039be5;
-  }
+}
 
 header {
     height: 200px;
@@ -30,27 +30,27 @@ header {
 
 
 button {
-        background-color: #014468;
-        border-radius: 8px;
-        color: #fff;
-        cursor: pointer;
-        font-size: 1.2em;
-        letter-spacing: 0.21px;
-        line-height: 16px;
-        max-width: 255px;
-        max-height: 75px;
-        padding: 20px 52px;
-        text-align: center;
-        transition-duration: 0.15s;
-        transition-property: background-color;
-        transition-timing-function: linear;
-        margin-top: 0.6em;
-        float: none;
+    background-color: #014468;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    max-height: 75px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 0.6em;
+    float: none;
 }
 
 button:hover {
     background-color: #039be5;
-  }
+}
 
 .all-done-text {
     font-size: 40px;
@@ -105,6 +105,7 @@ li {
     max-height: 34px;
     display: contents;
 }
+
 .score-time {
     display: flex;
     flex-wrap: wrap;
@@ -114,7 +115,7 @@ li {
     width: 175px;
 }
 
-  input {
+input {
     background-color: #f1f3f4;
     border-radius: 2px;
     border-width: 0;
@@ -130,18 +131,18 @@ li {
     transition-timing-function: ease, ease;
     vertical-align: middle;
     margin-bottom: 15px;
-  }
+}
 
-  input:hover {
+input:hover {
     background-color: #e8eaed;
-  }
+}
 
-  label {
-      width: 500px;
-      font-size: 40px;
-      font-weight: bold;
-      padding-right: 20px;
-  }
+label {
+    width: 500px;
+    font-size: 40px;
+    font-weight: bold;
+    padding-right: 20px;
+}
 
 #submit {
     margin: 0;
