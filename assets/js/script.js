@@ -1,4 +1,9 @@
-var question = ["What color is the sky?", "What does MVP Stand for in baseball?", "What does a cow make?", "How many legs on a horse?", "What sound does a dog make?"];
+var question = ["Javascript is a ________-sensitive language ?",
+    "Which built-in method returns the string representation of the number's value?",
+    "Which of the following function of String object returns a number indicating the Unicode value of the character at the given index?",
+    "Which of the following function of String object executes the search for a match between a regular expression and a specified string?",
+    "Which of the following function of Array object returns a new array comprised of this array joined with other array(s) and/or value(s)?"
+];
 var questionsEl = document.getElementById("questions");
 var answer1El = document.getElementById("answer-1");
 var answer2El = document.getElementById("answer-2");
@@ -19,19 +24,19 @@ hideButtons();
 
 var answers1 = {
     answer1: {
-        text: "Blue",
+        text: "Case",
         isCorrect: true
     },
     answer2: {
-        text: "Yellow",
+        text: "Person",
         isCorrect: false
     },
     answer3: {
-        text: "Purple",
+        text: "Computer",
         isCorrect: false
     },
     answer4: {
-        text: "Black",
+        text: "PC",
         isCorrect: false
     }
 };
@@ -39,76 +44,76 @@ var answers1 = {
 
 var answers2 = {
     answer1: {
-        text: "Most Vicious Person",
+        text: "toNumber()",
         isCorrect: false
     },
     answer2: {
-        text: "Most Verocious Player",
+        text: "toValue()",
         isCorrect: false
     },
     answer3: {
-        text: "Most Valuable Player",
+        text: "toString()",
         isCorrect: true
     },
     answer4: {
-        text: "Something Cool",
+        text: "None of the Above",
         isCorrect: false
     }
 };
 
 var answers3 = {
     answer1: {
-        text: "cell phones",
+        text: "concat()",
         isCorrect: false
     },
     answer2: {
-        text: "milk",
+        text: "charCodeAt()",
         isCorrect: true
     },
     answer3: {
-        text: "computers",
+        text: "charAt()",
         isCorrect: false
     },
     answer4: {
-        text: "people",
+        text: "indexOf()",
         isCorrect: false
     }
 };
 
 var answers4 = {
     answer1: {
-        text: "One",
+        text: "concat()",
         isCorrect: false
     },
     answer2: {
-        text: "Two",
+        text: "match()",
         isCorrect: false
     },
     answer3: {
-        text: "Three",
+        text: "replace()",
         isCorrect: false
     },
     answer4: {
-        text: "Four",
+        text: "search()",
         isCorrect: true
     }
 };
 
 var answers5 = {
     answer1: {
-        text: "Bark",
+        text: "concat()",
         isCorrect: true
     },
     answer2: {
-        text: "Meow",
+        text: "pop()",
         isCorrect: false
     },
     answer3: {
-        text: "Moo",
+        text: "push()",
         isCorrect: false
     },
     answer4: {
-        text: "Neigh",
+        text: "some()",
         isCorrect: false
     }
 };
